@@ -1,0 +1,22 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- WHY: Botón para abrir el menú lateral en dispositivos pequeños o en general. HOW: Usando ion-menu-button -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- WHY: Tarjeta de bienvenida minimalista. HOW: Utilizando ion-card sin bordes fuertes y alineación centrada -->
+  <div class="welcome-container">
+    <ion-icon name="rocket-outline" color="primary" class="hero-icon"></ion-icon>
+    <h1 class="hero-title">¡Bienvenido!</h1>
+    <p class="hero-subtitle">Gracias por estar acá, mi nombre es Omar Rivas y te presento mi aplicación minimalista y
+      moderna construida con Ionic donde podrás conocer
+      un poco sobre mí.</p>
+
+
+  </div>
+</ion-content>

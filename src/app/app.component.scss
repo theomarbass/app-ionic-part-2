@@ -1,0 +1,19 @@
+/*
+ * WHY: Necesitamos que el menú lateral se vea integrado con el fondo principal
+ * HOW: Estableciendo estilos básicos en el componente app-root si es necesario.
+ */
+ion-menu ion-content {
+  --background: #ffffff;
+}
+
+ion-item {
+  --border-radius: 8px;
+  margin: 4px 16px;
+  --padding-start: 16px;
+}
+
+ion-item.selected {
+  --background: rgba(0, 82, 204, 0.1);
+  --color: var(--ion-color-primary);
+  font-weight: 600;
+}

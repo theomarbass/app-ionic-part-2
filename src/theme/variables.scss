@@ -1,2 +1,19 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  /** 
+   * WHY: Definimos el color azul en tendencia (#0052cc) como color primario 
+   * para cumplir con el diseño minimalista y moderno solicitado.
+   * HOW: Sobrescribiendo las variables CSS nativas de Ionic para el color primary.
+   **/
+  --ion-color-primary: #0052cc;
+  --ion-color-primary-rgb: 0,82,204;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #0048b4;
+  --ion-color-primary-tint: #1a63d1;
+
+  /* Tipografía limpia para estilo moderno */
+  --ion-font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
+  
+  /* Fondo minimalista */
+  --ion-background-color: #f8fafc;
+}
