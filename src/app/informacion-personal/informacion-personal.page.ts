@@ -19,6 +19,7 @@ import {
   personOutline, locationOutline, calendarOutline, 
   heartOutline, logoGithub, mailOutline 
 } from 'ionicons/icons';
+import { AppFooterComponent } from '../shared/components/app-footer/app-footer.component';
 
 @Component({
   selector: 'app-informacion-personal',
@@ -30,7 +31,7 @@ import {
     IonButtons, IonMenuButton, IonCard, IonCardHeader, 
     IonCardTitle, IonCardContent, IonItem, IonIcon, 
     IonLabel, IonList, IonAvatar, IonChip,
-    CommonModule, FormsModule
+    CommonModule, FormsModule, AppFooterComponent
   ]
 })
 export class InformacionPersonalPage implements OnInit {

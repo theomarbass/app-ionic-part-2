@@ -1,3 +1,29 @@
+/**
+ * WHY: La libélula solo en Inicio refuerza la bienvenida sin distraer otras secciones.
+ * HOW: Fondo en --background de ion-content con overlay suave para legibilidad.
+ */
+ion-content.page-inicio {
+  --background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(255, 255, 255, 0.82) 100%),
+    url('../../assets/libelula.png') center center / cover no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  ion-content.page-inicio {
+    --background:
+      linear-gradient(180deg, rgba(18, 18, 18, 0.88) 0%, rgba(24, 24, 24, 0.82) 100%),
+      url('../../assets/libelula.png') center center / cover no-repeat;
+  }
+
+  .hero-title {
+    color: #f1f5f9;
+  }
+
+  .hero-subtitle {
+    color: #cbd5e0;
+  }
+}
+
 .welcome-container {
   display: flex;
   flex-direction: column;

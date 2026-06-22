@@ -8,6 +8,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { rocketOutline } from 'ionicons/icons';
+import { AppFooterComponent } from '../shared/components/app-footer/app-footer.component';
 
 @Component({
   selector: 'app-inicio',
@@ -18,7 +19,7 @@ import { rocketOutline } from 'ionicons/icons';
     IonContent, IonHeader, IonTitle, IonToolbar,
     IonButtons, IonMenuButton, IonCard, IonCardHeader,
     IonCardTitle, IonCardContent, IonButton, IonIcon,
-    CommonModule, FormsModule
+    CommonModule, FormsModule, AppFooterComponent
   ]
 })
 export class InicioPage implements OnInit {

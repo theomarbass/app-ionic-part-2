@@ -17,8 +17,13 @@
 
     <ion-card-content>
       <ion-list lines="none">
-        
-        <ion-item href="https://mail.google.com/mail/?view=cm&fs=1&to=omarrivas042@gmail.com" target="_blank" class="contact-item">
+
+        <ion-item
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=omarrivas042@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
           <ion-icon slot="start" name="mail-outline" color="primary"></ion-icon>
           <ion-label>
             <h3>Correo Electrónico</h3>
@@ -26,7 +31,12 @@
           </ion-label>
         </ion-item>
 
-        <ion-item href="https://github.com/theomarbass" target="_blank" class="contact-item">
+        <ion-item
+          href="https://github.com/theomarbass"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
           <ion-icon slot="start" name="logo-github" color="dark"></ion-icon>
           <ion-label>
             <h3>GitHub</h3>
@@ -34,15 +44,92 @@
           </ion-label>
         </ion-item>
 
-        <ion-item href="https://instagram.com/omar_jesusr" target="_blank" class="contact-item">
+        <ion-item
+          href="https://instagram.com/omar_jesusr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item"
+        >
           <ion-icon slot="start" name="logo-instagram" color="danger"></ion-icon>
           <ion-label>
             <h3>Instagram</h3>
             <p>&#64;omar_jesusr</p>
           </ion-label>
         </ion-item>
-        
+
       </ion-list>
     </ion-card-content>
   </ion-card>
+
+  <!-- WHY: Formulario validado para mensajes estructurados. HOW: Reactive Forms + mailto seguro -->
+  <ion-card class="contact-card">
+    <ion-card-header>
+      <ion-card-title>Envíame un mensaje</ion-card-title>
+      <p class="subtitle">Completa el formulario y te responderé pronto.</p>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <ion-item class="contact-item form-field">
+          <ion-input
+            label="Nombre"
+            labelPlacement="stacked"
+            formControlName="nombre"
+            autocomplete="name"
+            maxlength="100"
+          ></ion-input>
+        </ion-item>
+        @if (isInvalid('nombre')) {
+          <p class="error-text" role="alert">{{ getErrorMessage('nombre') }}</p>
+        }
+
+        <ion-item class="contact-item form-field">
+          <ion-input
+            type="email"
+            label="Email"
+            labelPlacement="stacked"
+            formControlName="email"
+            autocomplete="email"
+            inputmode="email"
+            maxlength="254"
+          ></ion-input>
+        </ion-item>
+        @if (isInvalid('email')) {
+          <p class="error-text" role="alert">{{ getErrorMessage('email') }}</p>
+        }
+
+        <ion-item class="contact-item form-field">
+          <ion-input
+            label="Asunto (opcional)"
+            labelPlacement="stacked"
+            formControlName="asunto"
+            maxlength="150"
+          ></ion-input>
+        </ion-item>
+        @if (isInvalid('asunto')) {
+          <p class="error-text" role="alert">{{ getErrorMessage('asunto') }}</p>
+        }
+
+        <ion-item class="contact-item form-field">
+          <ion-textarea
+            label="Mensaje"
+            labelPlacement="stacked"
+            formControlName="mensaje"
+            [autoGrow]="true"
+            maxlength="2000"
+          ></ion-textarea>
+        </ion-item>
+        @if (isInvalid('mensaje')) {
+          <p class="error-text" role="alert">{{ getErrorMessage('mensaje') }}</p>
+        }
+
+        <ion-button expand="block" type="submit" class="submit-button">
+          <ion-icon slot="start" name="send-outline"></ion-icon>
+          Enviar mensaje
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<app-footer></app-footer>
